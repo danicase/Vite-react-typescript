@@ -53,14 +53,5 @@ export const ReactDatePicker = ({ control }: DatePickerProps) => {
         )}
       />
     </>
-    // <DatePicker
-    //   selectsRange={true}
-    //   startDate={startDate}
-    //   endDate={endDate}
-    //   showTimeInput
-    //   timeInputLabel='Time:'
-    //   dateFormat='MM/dd/yyyy h:mm'
-    //   onChange={(date) => setDateRange(date)}
-    // />
   );
 };

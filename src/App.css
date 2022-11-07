@@ -27,3 +27,9 @@
 .read-the-docs {
   color: #888;
 }
+
+.react-datepicker__input-container {
+  display: flex;
+  justify-content: center;
+  margin: 0.1rem;
+}
