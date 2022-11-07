@@ -1,34 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
-
+import { useState } from 'react';
+import { useForm, Controller } from 'react-hook-form';
+import './App.css';
+import { ReactDatePicker } from './ReactDatePicker';
+import { Features } from './Feature';
 function App() {
-  const [count, setCount] = useState(0)
-
+  const { control, register } = useForm({
+    mode: 'onSubmit',
+    reValidateMode: 'onChange',
+    defaultValues: {
+      reactStartDate: new Date(),
+      reactEndDate: new Date(),
+    },
+  });
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div>
+      <Features title='Criteria:' />
+      <Features
+        title='React DatePicker'
+        ease='8 - lost of customization and options'
+        looks='6- basic but working'
+        style='BEM done properly, I epxect to be easy to style'
+        integration='7- 2 fields separated'
+      >
+        <ReactDatePicker control={control} />
+      </Features>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
